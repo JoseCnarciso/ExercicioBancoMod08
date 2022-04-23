@@ -1,6 +1,7 @@
 package Contas;
 
 public interface Tributavel {
-    double TaxaDeservico();
+    double TaxaDeservico(double valor);
+
 
 }

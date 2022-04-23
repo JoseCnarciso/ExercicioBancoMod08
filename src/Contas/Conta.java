@@ -1,6 +1,6 @@
 package Contas;
 
-public abstract class Conta {
+public abstract class   Conta {
     private String nomeCliente;
     private int agencia;
     private int numeroConta;
@@ -44,9 +44,9 @@ public abstract class Conta {
     public void setSaldo( double saldo ) {
         this.saldo = saldo;
     }
-    protected abstract void transferir( Conta contaDestino, double valor );
-    protected abstract double sacar( double valor );
-    protected abstract double depositar( double valor );
+    public abstract void transferir( Conta contaDestino, double valor );
+    public abstract double sacar(  double valor );
+    public abstract double depositar( double valor );
 
     @Override
     public String toString() {
@@ -57,4 +57,5 @@ public abstract class Conta {
                 ", saldo=" + saldo +
                 '}';
     }
+
 }
