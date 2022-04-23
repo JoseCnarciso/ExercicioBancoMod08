@@ -30,14 +30,14 @@ public class ContaPoupanca extends Conta{
 
 
     @Override
-    protected void transferir( Conta contaDestino, double valor ) {
+    public void transferir( Conta contaDestino, double valor ) {
          double sacado = sacar(valor);
         contaDestino.depositar(sacado);
 
     }
 
     @Override
-    protected double sacar( double valor ) {
+    public double sacar( double valor ) {
         if (valor <= (getSaldo())){
             saldo = saldo - valor;
             return valor;
@@ -49,7 +49,7 @@ public class ContaPoupanca extends Conta{
     }
 
     @Override
-    protected double depositar( double valor ) {
+    public double depositar( double valor ) {
         setSaldo(getSaldo() + valor);
 
         return valor;
@@ -66,4 +66,5 @@ public class ContaPoupanca extends Conta{
                 ", taxaJuros=" + taxaJuros +
                 '}';
     }
+
 }

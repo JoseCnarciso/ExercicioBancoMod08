@@ -11,10 +11,9 @@ public class ContasDB {
     private List<ContaPoupanca>contaPoupancaList = new ArrayList<>();
     private List<ContaSalario>contaSalarioList = new ArrayList<>();
 
-    public List<ContaCorrente> getContasList() {
+    public List<ContaCorrente> getContasCorrenteList() {
         return contaCorrenteList;
     }
-
 
     public List<ContaPoupanca> getContaPoupancaList() {
         return contaPoupancaList;
@@ -35,10 +34,33 @@ public class ContasDB {
     }
 
 
-    public void imprimiContas() {
+
+    public Conta procurarContaPeloNomeCliente(String nome) {
         for(Conta conta : contaCorrenteList ){
-            System.out.println(conta);
+            if (conta.getNomeCliente().equalsIgnoreCase(nome)) {
+                return conta;
+            }
         }
+
+        for(Conta conta : contaPoupancaList ){
+            if (conta.getNomeCliente().equalsIgnoreCase(nome)) {
+                return conta;
+            }
+        }
+
+        for(Conta conta : contaSalarioList ){
+            if (conta.getNomeCliente().equalsIgnoreCase(nome)) {
+                return conta;
+            }
+        }
+        return null;
+    }
+
+    public void transferir(Conta contaSacado, Conta contaDepositado, double valor) {
+        contaSacado.transferir(contaDepositado, valor);
+    }
+    public void sacar ( Conta contaSacado, double valor){
+        contaSacado.sacar((valor));
     }
 
 }

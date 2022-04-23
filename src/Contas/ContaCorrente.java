@@ -1,39 +1,32 @@
 package Contas;
 
-public class ContaCorrente extends Conta {
+public class ContaCorrente extends Conta implements Tributavel {
     private double chequeEspecial;
 
     public ContaCorrente( String nomeCliente, int agencia, int numeroConta, double saldo, double chequeEspecial ) {
         super(nomeCliente, agencia, numeroConta, saldo);
         this.chequeEspecial = chequeEspecial;
     }
-
-
-
     @Override
-    protected void transferir( Conta contaDestino, double valor ) {
+    public void transferir( Conta contaDestino, double valor ) {
         double sacado = sacar(valor);
         contaDestino.depositar(sacado);
-
-
     }
 
     @Override
-    protected double sacar( double valor ) {
-        if (valor <= (getSaldo() + chequeEspecial)) {
-        saldo = saldo - valor;
+    public double sacar( double valor ) {
+        if (valor <= (getSaldo() + chequeEspecial )) {
+        saldo = saldo - getSaldo();
         return valor;
     } else {
-        System.out.println("Vc nao tem saldo suficiente.");
+        System.out.println("Você nao tem saldo suficiente.");
     }
-
         return valor;
     }
 
     @Override
-    protected double depositar( double valor ) {
+    public double depositar( double valor ) {
         setSaldo(getSaldo() + valor);
-
        return valor;
     }
 
@@ -64,6 +57,16 @@ public class ContaCorrente extends Conta {
                 ", chequeEspecial=" + chequeEspecial +
                 '}';
     }
+
+
+    @Override
+    public double TaxaDeservico(double valor) {
+        return this.sacar(valor) * 0.01 - saldo;
+    }
+
+
+
+
 }
 
 
