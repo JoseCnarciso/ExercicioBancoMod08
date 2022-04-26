@@ -55,6 +55,26 @@ public class ContasDB {
         }
         return null;
     }
+    public Conta imprimirContas() {
+        for(Conta contaCorrente : contaCorrenteList ){
+            for(Conta conta : contaCorrenteList) {
+                System.out.println(conta);
+            }
+        }
+
+        for(Conta contaPoupanca : contaPoupancaList ){
+            for (Conta conta : contaPoupancaList) {
+                System.out.println(conta);
+            }
+        }
+
+        for(Conta contaSalario : contaSalarioList ){
+            for (Conta conta : contaSalarioList){
+                System.out.println(conta);
+            }
+        }
+        return null;
+    }
 
     public void transferir(Conta contaSacado, Conta contaDepositado, double valor) {
         contaSacado.transferir(contaDepositado, valor);

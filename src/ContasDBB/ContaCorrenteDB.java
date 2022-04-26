@@ -15,11 +15,6 @@ private List<Conta>contaCorrenteList = new ArrayList<>();
         contaCorrenteList.add(conta);
     }
 
-    public void imprimirConta( ContaCorrenteDB contaCorrenteDB ) {
-        for(Conta conta : contaCorrenteList) {
-            System.out.println(conta);
-        }
-    }
 
     @Override
     public String toString() {

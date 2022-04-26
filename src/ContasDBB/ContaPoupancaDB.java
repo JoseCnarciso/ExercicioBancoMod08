@@ -13,10 +13,6 @@ public class ContaPoupancaDB {
 
     }
 
-    public void imprimirContas() {
-        for (Conta conta : contaPoupancalist) {
-            System.out.println(conta);
-        }
-    }
+
 }
 

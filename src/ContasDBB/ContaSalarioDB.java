@@ -12,9 +12,5 @@ public class ContaSalarioDB {
     public  void adicionarConta(Conta conta){
         contaSalarioList.add(conta);
     }
-    public  void imprimirContas(){
-        for (Conta conta : contaSalarioList){
-        System.out.println(conta);
-        }
-    }
+
 }

@@ -61,7 +61,7 @@ public class ContaCorrente extends Conta implements Tributavel {
 
     @Override
     public double TaxaDeservico(double valor) {
-        return this.sacar(valor) * 0.01 - saldo;
+        return this.sacar(valor) - (0.01 - saldo);
     }
 
 

@@ -164,7 +164,7 @@ public class Menu {
                                 System.out.println("Nome do cliente: " + conta.getNomeCliente());
                                 System.out.println("Agencia: " + conta.getAgencia());
                                 System.out.println("Número da conta: " + conta.getNumeroConta());
-                                System.out.println("Taxa de juros mensal" + conta.getTaxaJuros());
+                                System.out.println("Taxa de juros mensal: " + conta.getTaxaJuros());
                                 System.out.println("Saldo: " + conta.getSaldo());
                                 System.out.println("========================================");
                             }break;
@@ -176,7 +176,7 @@ public class Menu {
                                 System.out.println("Nome do cliente: " + conta.getNomeCliente());
                                 System.out.println("Agencia: " + conta.getAgencia());
                                 System.out.println("Número da conta: " + conta.getNumeroConta());
-                                System.out.println("Limite de saques mensal" + conta.getLimiteDeSaques());
+                                System.out.println("Limite de saques mensal: " + conta.getLimiteDeSaques());
                                 System.out.println("Saldo: " + conta.getSaldo());
                                 System.out.println("========================================");
                             }break;
